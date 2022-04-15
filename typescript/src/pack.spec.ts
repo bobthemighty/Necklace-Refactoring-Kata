@@ -4,14 +4,13 @@ const approvalDir = `${__dirname}/../approvals`;
 
 import {
   Jewellery,
-  JewelleryStorage,
   makeEarring,
   makeNecklace,
   makePendant,
   makePendantNecklace,
   makeRing,
-  makeStorage,
 } from "./jewellery";
+import { JewelleryStorage, makeStorage } from "./JewelleryBox";
 import { pack, packNecklace } from "./pack";
 
 const printItem = (item: Jewellery): string => {
