@@ -7,5 +7,11 @@
   "dresserTop": [],
   "safe": [],
   "travelRoll": [],
-  "tree": []
+  "tree": [
+    {
+      "kind": "Necklace",
+      "stone": "Plain",
+      "type": "LongChain"
+    }
+  ]
 }

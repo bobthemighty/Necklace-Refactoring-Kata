@@ -117,7 +117,11 @@ export const makeStorage = (): JewelleryStorage => {
         this.tree.push(item.chain);
         return true;
       }
-      return this.safe.push(item) || this.box.topShelf.push(item);
+      return (
+        this.safe.push(item) ||
+        this.box.topShelf.push(item) ||
+        this.tree.push(item)
+      );
     },
   };
 };

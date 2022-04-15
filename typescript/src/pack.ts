@@ -9,13 +9,7 @@ export function packNecklace(
   item: Necklace | PendantNecklace,
   storage: JewelleryStorage
 ) {
-  if (storage.push(item)) return;
-  else if (item.type === "Beads" || item.type === "Chain")
-    storage.tree.push(item);
-  else if (item.type === "Pendant") {
-    storage.tree.push(item.chain);
-    storage.box.topShelf.push(item.pendant);
-  }
+  storage.push(item);
 }
 
 export function pack(item: Jewellery, storage: JewelleryStorage) {
