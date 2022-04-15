@@ -33,6 +33,7 @@ const unwrap = (store: JewelleryStorage) => ({
     ...store.box,
     topShelf: store.box.topShelf._items,
   },
+  tree: store.tree._items,
 });
 
 test.each`

@@ -4,23 +4,19 @@
     "ringCompartment": [],
     "topShelf": [
       {
-        "chain": {
-          "kind": "Necklace",
-          "stone": "Plain",
-          "type": "Chain"
-        },
-        "kind": "Necklace",
-        "pendant": {
-          "kind": "Pendant",
-          "stone": "Diamond"
-        },
-        "stone": "Plain",
-        "type": "Pendant"
+        "kind": "Pendant",
+        "stone": "Diamond"
       }
     ]
   },
   "dresserTop": [],
   "safe": [],
   "travelRoll": [],
-  "tree": []
+  "tree": [
+    {
+      "kind": "Necklace",
+      "stone": "Plain",
+      "type": "Chain"
+    }
+  ]
 }
