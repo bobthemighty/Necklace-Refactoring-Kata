@@ -1,8 +1,0 @@
-Box:
-  Rings:      []
-  Top:        [Pendant (Diamond)]
-  Main:       []
-Tree:         [LongChain Necklace (Plain)]
-Travel Roll:  []
-Safe:         []
-Dresser Top:  []

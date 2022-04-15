@@ -1,8 +1,17 @@
-Box:
-  Rings:      []
-  Top:        []
-  Main:       []
-Tree:         []
-Travel Roll:  []
-Safe:         [Chain Necklace (Diamond)]
-Dresser Top:  []
+{
+  "box": {
+    "mainSection": [],
+    "ringCompartment": [],
+    "topShelf": []
+  },
+  "dresserTop": [],
+  "safe": [
+    {
+      "kind": "Necklace",
+      "stone": "Diamond",
+      "type": "Chain"
+    }
+  ],
+  "travelRoll": [],
+  "tree": []
+}

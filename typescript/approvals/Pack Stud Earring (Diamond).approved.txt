@@ -1,9 +1,17 @@
-Packing item Stud Earring (Diamond)
-Box:
-  Rings:      []
-  Top:        []
-  Main:       []
-Tree:         []
-Travel Roll:  []
-Safe:         [Stud Earring (Diamond)]
-Dresser Top:  []
+{
+  "box": {
+    "mainSection": [],
+    "ringCompartment": [],
+    "topShelf": []
+  },
+  "dresserTop": [],
+  "safe": [
+    {
+      "kind": "Earring",
+      "stone": "Diamond",
+      "type": "Stud"
+    }
+  ],
+  "travelRoll": [],
+  "tree": []
+}

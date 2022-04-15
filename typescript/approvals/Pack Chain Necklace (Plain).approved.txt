@@ -1,9 +1,17 @@
-Packing item Chain Necklace (Plain)
-Box:
-  Rings:      []
-  Top:        [Chain Necklace (Plain)]
-  Main:       []
-Tree:         []
-Travel Roll:  []
-Safe:         []
-Dresser Top:  []
+{
+  "box": {
+    "mainSection": [],
+    "ringCompartment": [],
+    "topShelf": [
+      {
+        "kind": "Necklace",
+        "stone": "Plain",
+        "type": "Chain"
+      }
+    ]
+  },
+  "dresserTop": [],
+  "safe": [],
+  "travelRoll": [],
+  "tree": []
+}

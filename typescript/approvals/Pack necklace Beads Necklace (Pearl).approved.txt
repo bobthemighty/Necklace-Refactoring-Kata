@@ -1,8 +1,17 @@
-Box:
-  Rings:      []
-  Top:        []
-  Main:       []
-Tree:         [Beads Necklace (Pearl)]
-Travel Roll:  []
-Safe:         []
-Dresser Top:  []
+{
+  "box": {
+    "mainSection": [],
+    "ringCompartment": [],
+    "topShelf": []
+  },
+  "dresserTop": [],
+  "safe": [],
+  "travelRoll": [],
+  "tree": [
+    {
+      "kind": "Necklace",
+      "stone": "Pearl",
+      "type": "Beads"
+    }
+  ]
+}

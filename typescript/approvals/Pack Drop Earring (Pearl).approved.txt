@@ -1,9 +1,17 @@
-Packing item Drop Earring (Pearl)
-Box:
-  Rings:      []
-  Top:        [Drop Earring (Pearl)]
-  Main:       []
-Tree:         []
-Travel Roll:  []
-Safe:         []
-Dresser Top:  []
+{
+  "box": {
+    "mainSection": [],
+    "ringCompartment": [],
+    "topShelf": [
+      {
+        "kind": "Earring",
+        "stone": "Pearl",
+        "type": "Drop"
+      }
+    ]
+  },
+  "dresserTop": [],
+  "safe": [],
+  "travelRoll": [],
+  "tree": []
+}

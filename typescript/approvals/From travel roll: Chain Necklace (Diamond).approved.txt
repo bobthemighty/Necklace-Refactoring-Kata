@@ -1,9 +1,17 @@
-Packing item Chain Necklace (Diamond) (is in travel roll)
-Box:
-  Rings:      []
-  Top:        [Chain Necklace (Diamond)]
-  Main:       []
-Tree:         []
-Travel Roll:  []
-Safe:         []
-Dresser Top:  []
+{
+  "box": {
+    "mainSection": [],
+    "ringCompartment": [],
+    "topShelf": [
+      {
+        "kind": "Necklace",
+        "stone": "Diamond",
+        "type": "Chain"
+      }
+    ]
+  },
+  "dresserTop": [],
+  "safe": [],
+  "travelRoll": [],
+  "tree": []
+}

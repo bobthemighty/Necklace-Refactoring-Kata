@@ -1,8 +1,26 @@
-Box:
-  Rings:      []
-  Top:        [Pendant Necklace (chain: Chain Necklace (Plain), pendant: Pendant (Diamond))]
-  Main:       []
-Tree:         []
-Travel Roll:  []
-Safe:         []
-Dresser Top:  []
+{
+  "box": {
+    "mainSection": [],
+    "ringCompartment": [],
+    "topShelf": [
+      {
+        "chain": {
+          "kind": "Necklace",
+          "stone": "Plain",
+          "type": "Chain"
+        },
+        "kind": "Necklace",
+        "pendant": {
+          "kind": "Pendant",
+          "stone": "Diamond"
+        },
+        "stone": "Plain",
+        "type": "Pendant"
+      }
+    ]
+  },
+  "dresserTop": [],
+  "safe": [],
+  "travelRoll": [],
+  "tree": []
+}

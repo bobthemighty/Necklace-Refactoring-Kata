@@ -1,9 +1,17 @@
-Packing item Chain Necklace (Amber)
-Box:
-  Rings:      []
-  Top:        [Chain Necklace (Amber)]
-  Main:       []
-Tree:         []
-Travel Roll:  []
-Safe:         []
-Dresser Top:  []
+{
+  "box": {
+    "mainSection": [],
+    "ringCompartment": [],
+    "topShelf": [
+      {
+        "kind": "Necklace",
+        "stone": "Amber",
+        "type": "Chain"
+      }
+    ]
+  },
+  "dresserTop": [],
+  "safe": [],
+  "travelRoll": [],
+  "tree": []
+}

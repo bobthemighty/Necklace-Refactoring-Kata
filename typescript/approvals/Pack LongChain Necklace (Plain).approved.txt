@@ -1,8 +1,0 @@
-Box:
-  Rings:      []
-  Top:        []
-  Main:       []
-Tree:         []
-Travel Roll:  []
-Safe:         []
-Dresser Top:  []

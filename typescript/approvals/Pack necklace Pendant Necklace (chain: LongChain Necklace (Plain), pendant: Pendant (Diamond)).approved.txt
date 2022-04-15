@@ -1,8 +1,22 @@
-Box:
-  Rings:      []
-  Top:        [Pendant (Diamond)]
-  Main:       []
-Tree:         [LongChain Necklace (Plain)]
-Travel Roll:  []
-Safe:         []
-Dresser Top:  []
+{
+  "box": {
+    "mainSection": [],
+    "ringCompartment": [],
+    "topShelf": [
+      {
+        "kind": "Pendant",
+        "stone": "Diamond"
+      }
+    ]
+  },
+  "dresserTop": [],
+  "safe": [],
+  "travelRoll": [],
+  "tree": [
+    {
+      "kind": "Necklace",
+      "stone": "Plain",
+      "type": "LongChain"
+    }
+  ]
+}

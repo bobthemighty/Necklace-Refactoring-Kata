@@ -1,9 +1,22 @@
-Packing item Pendant Necklace (chain: LongChain Necklace (Plain), pendant: Pendant (Amber)) (is in travel roll)
-Box:
-  Rings:      []
-  Top:        [Pendant (Amber)]
-  Main:       []
-Tree:         [LongChain Necklace (Plain)]
-Travel Roll:  []
-Safe:         []
-Dresser Top:  []
+{
+  "box": {
+    "mainSection": [],
+    "ringCompartment": [],
+    "topShelf": [
+      {
+        "kind": "Pendant",
+        "stone": "Amber"
+      }
+    ]
+  },
+  "dresserTop": [],
+  "safe": [],
+  "travelRoll": [],
+  "tree": [
+    {
+      "kind": "Necklace",
+      "stone": "Plain",
+      "type": "LongChain"
+    }
+  ]
+}

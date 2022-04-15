@@ -1,9 +1,16 @@
-Packing item Ring (Amber) (is in travel roll)
-Box:
-  Rings:      [Ring (Amber)]
-  Top:        []
-  Main:       []
-Tree:         []
-Travel Roll:  []
-Safe:         []
-Dresser Top:  []
+{
+  "box": {
+    "mainSection": [],
+    "ringCompartment": [
+      {
+        "kind": "Ring",
+        "stone": "Amber"
+      }
+    ],
+    "topShelf": []
+  },
+  "dresserTop": [],
+  "safe": [],
+  "travelRoll": [],
+  "tree": []
+}

@@ -1,9 +1,17 @@
-Packing item Hoop Earring (Plain)
-Box:
-  Rings:      []
-  Top:        []
-  Main:       []
-Tree:         [Hoop Earring (Plain)]
-Travel Roll:  []
-Safe:         []
-Dresser Top:  []
+{
+  "box": {
+    "mainSection": [],
+    "ringCompartment": [],
+    "topShelf": []
+  },
+  "dresserTop": [],
+  "safe": [],
+  "travelRoll": [],
+  "tree": [
+    {
+      "kind": "Earring",
+      "stone": "Plain",
+      "type": "Hoop"
+    }
+  ]
+}

@@ -1,9 +1,22 @@
-Packing item Pendant Necklace (chain: Beads Necklace (Plain), pendant: Pendant (Pearl)) (is in travel roll)
-Box:
-  Rings:      []
-  Top:        [Pendant (Pearl)]
-  Main:       []
-Tree:         [Beads Necklace (Plain)]
-Travel Roll:  []
-Safe:         []
-Dresser Top:  []
+{
+  "box": {
+    "mainSection": [],
+    "ringCompartment": [],
+    "topShelf": [
+      {
+        "kind": "Pendant",
+        "stone": "Pearl"
+      }
+    ]
+  },
+  "dresserTop": [],
+  "safe": [],
+  "travelRoll": [],
+  "tree": [
+    {
+      "kind": "Necklace",
+      "stone": "Plain",
+      "type": "Beads"
+    }
+  ]
+}

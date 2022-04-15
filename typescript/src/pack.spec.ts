@@ -40,15 +40,6 @@ Safe:         ${printStore(storage.safe)}
 Dresser Top:  ${printStore(storage.dresserTop)}
 `;
 
-const packItem = (item: Jewellery, storage: JewelleryStorage) => {
-  let log = `Packing item ${printItem(item)}`;
-  if (storage.travelRoll.includes(item)) log += " (is in travel roll)";
-  pack(item, storage);
-  log += "\n";
-  log += printStorage(storage);
-  return log;
-};
-
 test.each`
   item
   ${makeNecklace("Diamond", "Chain")}
@@ -61,10 +52,10 @@ test.each`
 `("Pack Necklace", ({ item }) => {
   const storage = makeStorage();
   packNecklace(item, storage);
-  approvals.verify(
+  approvals.verifyAsJSON(
     approvalDir,
     `Pack necklace ${printItem(item)}`,
-    printStorage(storage),
+    storage,
     {
       forceApproveAll: process.env["APPROVE"] === "1",
     }
@@ -89,14 +80,11 @@ test.each`
   ${makeRing("Diamond")}
   ${makePendant("Plain")}
 `("Pack item", ({ item }) => {
-  approvals.verify(
-    approvalDir,
-    `Pack ${printItem(item)}`,
-    packItem(item, makeStorage()),
-    {
-      forceApproveAll: process.env["APPROVE"] === "1",
-    }
-  );
+  const storage = makeStorage();
+  pack(item, storage);
+  approvals.verifyAsJSON(approvalDir, `Pack ${printItem(item)}`, storage, {
+    forceApproveAll: process.env["APPROVE"] === "1",
+  });
 });
 
 test.each`
@@ -118,12 +106,13 @@ test.each`
 `("Pack item from travel roll", ({ item }) => {
   const storage = makeStorage();
   storage.travelRoll.push(item);
-  approvals.verify(
-    approvalDir,
-    `From travel roll: ${printItem(item)}`,
-    packItem(item, storage),
-    {
-      forceApproveAll: process.env["APPROVE"] === "1",
-    }
-  );
+  pack(item, storage),
+    approvals.verifyAsJSON(
+      approvalDir,
+      `From travel roll: ${printItem(item)}`,
+      storage,
+      {
+        forceApproveAll: process.env["APPROVE"] === "1",
+      }
+    );
 });
