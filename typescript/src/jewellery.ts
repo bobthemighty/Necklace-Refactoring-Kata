@@ -70,7 +70,7 @@ export interface JewelleryStorage {
     box: JewelleryBox,
     tree: Array<Jewellery>,
     travelRoll: Array<Jewellery>,
-    safe: Array<Jewellery>,
+    safe: Storage,
     dresserTop: Array<Jewellery>,
 }
 
@@ -82,6 +82,22 @@ export const makeStorage = () : JewelleryStorage => ({
     },
     tree: [],
     travelRoll: [],
-    safe: [],
+    safe: Safe(),
     dresserTop: []
 })
+
+const Safe = () : Storage  =>   ({
+    _items: [],
+    includes (item: Jewellery) { return this._items.includes(item) },
+    push (item: Jewellery) {
+        if (item.stone === "Diamond")
+            this._items.push(item)
+        return this.includes(item)
+    }
+})
+
+interface Storage {
+  push: (item: Jewellery) => boolean;
+  includes: (item: Jewellery) => boolean;
+    _items: Array<Jewellery>;
+}

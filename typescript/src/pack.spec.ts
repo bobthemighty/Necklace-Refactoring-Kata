@@ -26,19 +26,10 @@ const printItem = (item: Jewellery): string => {
   return `${item.kind} (${item.stone})`;
 };
 
-const printStore = (items: Array<Jewellery>) =>
-  `[${items.map(printItem).join("\n")}]`;
-
-const printStorage = (storage: JewelleryStorage) =>
-  `Box:
-  Rings:      ${printStore(storage.box.ringCompartment)}
-  Top:        ${printStore(storage.box.topShelf)}
-  Main:       ${printStore(storage.box.mainSection)}
-Tree:         ${printStore(storage.tree)}
-Travel Roll:  ${printStore(storage.travelRoll)}
-Safe:         ${printStore(storage.safe)}
-Dresser Top:  ${printStore(storage.dresserTop)}
-`;
+const unwrap = (store: JewelleryStorage) => ({
+  ...store,
+  safe: store.safe._items,
+});
 
 test.each`
   item
@@ -55,7 +46,7 @@ test.each`
   approvals.verifyAsJSON(
     approvalDir,
     `Pack necklace ${printItem(item)}`,
-    storage,
+    unwrap(storage),
     {
       forceApproveAll: process.env["APPROVE"] === "1",
     }
@@ -82,9 +73,14 @@ test.each`
 `("Pack item", ({ item }) => {
   const storage = makeStorage();
   pack(item, storage);
-  approvals.verifyAsJSON(approvalDir, `Pack ${printItem(item)}`, storage, {
-    forceApproveAll: process.env["APPROVE"] === "1",
-  });
+  approvals.verifyAsJSON(
+    approvalDir,
+    `Pack ${printItem(item)}`,
+    unwrap(storage),
+    {
+      forceApproveAll: process.env["APPROVE"] === "1",
+    }
+  );
 });
 
 test.each`
@@ -110,7 +106,7 @@ test.each`
     approvals.verifyAsJSON(
       approvalDir,
       `From travel roll: ${printItem(item)}`,
-      storage,
+      unwrap(storage),
       {
         forceApproveAll: process.env["APPROVE"] === "1",
       }
