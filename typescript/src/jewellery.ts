@@ -74,30 +74,44 @@ export interface JewelleryStorage {
     dresserTop: Array<Jewellery>,
 }
 
+const isDropEarring = (x: Jewellery) => x.kind === "Earring" && x.type === "Drop" && x.stone !== "Plain"
+
 export const makeStorage = (): JewelleryStorage => {
-    const travelRoll : Array<Jewellery> = [];
+    const travelRoll: Array<Jewellery> = [];
     return {
-    box: {
-        ringCompartment: [],
-        topShelf: TopShelf(travelRoll),
-        mainSection: []
-    },
-    tree: [],
-    travelRoll,
-    safe: Safe(),
-    dresserTop: []
+        box: {
+            ringCompartment: [],
+            topShelf: new Storage(x =>
+                x.size() === "Small" ||
+                travelRoll.includes(x) ||
+                x.kind === "Pendant" ||
+                isDropEarring(x)
+            ),
+            mainSection: []
+        },
+        tree: [],
+        travelRoll,
+        safe: new Storage((x) => x.stone === "Diamond"),
+        dresserTop: []
     }
 }
 
-const Safe = (): Storage => ({
-    _items: [],
-    includes(item: Jewellery) { return this._items.includes(item) },
-    push(item: Jewellery) {
-        if (item.stone === "Diamond")
-            this._items.push(item)
-        return this.includes(item)
+class Storage {
+    public _items: Array<Jewellery>;
+    constructor(private accepts: (item: Jewellery) => boolean) {
+        this._items = []
     }
-})
+
+    push(item: Jewellery) {
+        if (this.accepts(item)) {
+            this._items.push(item)
+            return true;
+        }
+        return false;
+    }
+
+    includes(item: Jewellery) { return this._items.includes(item) }
+}
 
 const TopShelf = (travelRoll: Array<Jewellery>): Storage => ({
     _items: [],
@@ -107,9 +121,9 @@ const TopShelf = (travelRoll: Array<Jewellery>): Storage => ({
             this._items.push(item)
         else if (travelRoll.includes(item))
             this._items.push(item)
-        else if(item.kind === "Pendant")
+        else if (item.kind === "Pendant")
             this._items.push(item)
-        else if(item.kind === "Earring" && item.type === "Drop" && item.stone !== "Plain")
+        else if (item.kind === "Earring" && item.type === "Drop" && item.stone !== "Plain")
             this._items.push(item)
         return this.includes(item)
     }
