@@ -29,6 +29,10 @@ const printItem = (item: Jewellery): string => {
 const unwrap = (store: JewelleryStorage) => ({
   ...store,
   safe: store.safe._items,
+  box: {
+    ...store.box,
+    topShelf: store.box.topShelf._items,
+  },
 });
 
 test.each`

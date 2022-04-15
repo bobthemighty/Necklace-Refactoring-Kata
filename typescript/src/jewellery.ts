@@ -57,12 +57,12 @@ export const makePendantNecklace = (pendant: Jewel, type: NecklaceType): Pendant
 export const makePendant = (stone: Jewel): Pendant =>
     ({ kind: "Pendant", stone, size: () => "Small" })
 
-export const makeRing = (stone: Jewel) : Ring =>
-    ({kind: "Ring",size: ()=> "Small", stone});
+export const makeRing = (stone: Jewel): Ring =>
+    ({ kind: "Ring", size: () => "Small", stone });
 
 export interface JewelleryBox {
     ringCompartment: Array<Jewellery>,
-    topShelf: Array<Jewellery>,
+    topShelf: Storage,
     mainSection: Array<Jewellery>,
 }
 
@@ -74,30 +74,49 @@ export interface JewelleryStorage {
     dresserTop: Array<Jewellery>,
 }
 
-export const makeStorage = () : JewelleryStorage => ({
+export const makeStorage = (): JewelleryStorage => {
+    const travelRoll : Array<Jewellery> = [];
+    return {
     box: {
         ringCompartment: [],
-        topShelf: [],
+        topShelf: TopShelf(travelRoll),
         mainSection: []
     },
     tree: [],
-    travelRoll: [],
+    travelRoll,
     safe: Safe(),
     dresserTop: []
-})
+    }
+}
 
-const Safe = () : Storage  =>   ({
+const Safe = (): Storage => ({
     _items: [],
-    includes (item: Jewellery) { return this._items.includes(item) },
-    push (item: Jewellery) {
+    includes(item: Jewellery) { return this._items.includes(item) },
+    push(item: Jewellery) {
         if (item.stone === "Diamond")
             this._items.push(item)
         return this.includes(item)
     }
 })
 
+const TopShelf = (travelRoll: Array<Jewellery>): Storage => ({
+    _items: [],
+    includes(item: Jewellery) { return this._items.includes(item) },
+    push(item: Jewellery) {
+        if (item.size() === "Small")
+            this._items.push(item)
+        else if (travelRoll.includes(item))
+            this._items.push(item)
+        else if(item.kind === "Pendant")
+            this._items.push(item)
+        else if(item.kind === "Earring" && item.type === "Drop" && item.stone !== "Plain")
+            this._items.push(item)
+        return this.includes(item)
+    }
+})
+
 interface Storage {
-  push: (item: Jewellery) => boolean;
-  includes: (item: Jewellery) => boolean;
+    push: (item: Jewellery) => boolean;
+    includes: (item: Jewellery) => boolean;
     _items: Array<Jewellery>;
 }
