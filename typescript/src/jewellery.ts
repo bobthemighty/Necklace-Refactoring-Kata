@@ -5,7 +5,7 @@ type JewelleryType = "Ring" | "Earring" | "Necklace" | "Pendant"
 type JewllerySize = "Small" | "Large"
 
 interface BaseJewellery<TKind extends JewelleryType> {
-    _kind: TKind,
+    kind: TKind,
     size(): JewllerySize
     stone: Jewel
 }
@@ -19,8 +19,7 @@ export interface Necklace extends BaseJewellery<"Necklace"> {
     type: NecklaceType
 }
 
-export interface PendantNecklace extends BaseJewellery<"Necklace"> {
-    _kind: "Necklace"
+export interface PendantNecklace extends Omit<Necklace, "type"> {
     type: "Pendant"
     chain: Necklace
     pendant: Pendant
@@ -29,24 +28,25 @@ export interface PendantNecklace extends BaseJewellery<"Necklace"> {
 export type Jewellery = Earring | Ring | Pendant | Necklace | PendantNecklace
 
 export const makeEarring = (stone: Jewel, type: EarringType): Earring => ({
-    _kind: "Earring",
+    kind: "Earring",
     size() { return this.type === "Stud" ? "Small" : "Large" },
     type,
     stone
 })
 
 export const makeNecklace = (stone: Jewel, type: NecklaceType): Necklace => ({
-    _kind: "Necklace",
+    kind: "Necklace",
     size() { return ["Beads", "LongChain"].includes(this.type) ? "Large" : "Small" },
     type,
     stone
 })
 
-export const makePendantNecklace = (pendant: Pendant, chain: NexklaceType): PendantNecklace => ({
-    _kind: "Necklace",
+export const makePendantNecklace = (pendant: Jewel, type: NecklaceType): PendantNecklace => ({
+    kind: "Necklace",
+    type: "Pendant",
     stone: "Plain",
-    chain,
-    pendant,
+    chain: makeNecklace("Plain", type),
+    pendant: makePendant(pendant),
     size() {
         if (this.chain.size() === "Large" || this.pendant.size() == "Large")
             return "Large"
@@ -55,10 +55,10 @@ export const makePendantNecklace = (pendant: Pendant, chain: NexklaceType): Pend
 })
 
 export const makePendant = (stone: Jewel): Pendant =>
-    ({ _kind: "Pendant", stone, size: () => "Small" })
+    ({ kind: "Pendant", stone, size: () => "Small" })
 
-export const makeRing = (stone: Jewel) =>
-    ({_kind: "Ring",size: ()=> "Small", stone});
+export const makeRing = (stone: Jewel) : Ring =>
+    ({kind: "Ring",size: ()=> "Small", stone});
 
 export interface JewelleryBox {
     ringCompartment: Array<Jewellery>,
@@ -73,3 +73,15 @@ export interface JewelleryStorage {
     safe: Array<Jewellery>,
     dresserTop: Array<Jewellery>,
 }
+
+export const makeStorage = () : JewelleryStorage => ({
+    box: {
+        ringCompartment: [],
+        topShelf: [],
+        mainSection: []
+    },
+    tree: [],
+    travelRoll: [],
+    safe: [],
+    dresserTop: []
+})
