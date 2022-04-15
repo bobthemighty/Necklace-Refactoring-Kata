@@ -1,0 +1,9 @@
+Packing item Chain Necklace (Amber)
+Box:
+  Rings:      []
+  Top:        [Chain Necklace (Amber)]
+  Main:       []
+Tree:         []
+Travel Roll:  []
+Safe:         []
+Dresser Top:  []

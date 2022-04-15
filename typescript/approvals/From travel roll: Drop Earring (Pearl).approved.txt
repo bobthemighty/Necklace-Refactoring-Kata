@@ -1,0 +1,9 @@
+Packing item Drop Earring (Pearl) (is in travel roll)
+Box:
+  Rings:      []
+  Top:        [Drop Earring (Pearl)]
+  Main:       []
+Tree:         []
+Travel Roll:  []
+Safe:         []
+Dresser Top:  []

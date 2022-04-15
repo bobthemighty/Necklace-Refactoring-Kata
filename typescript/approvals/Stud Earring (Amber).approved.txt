@@ -1,0 +1,9 @@
+Packing item Stud Earring (Amber)
+Box:
+  Rings:      []
+  Top:        [Stud Earring (Amber)]
+  Main:       []
+Tree:         []
+Travel Roll:  []
+Safe:         []
+Dresser Top:  []

@@ -1,0 +1,9 @@
+Packing item Ring (Amber)
+Box:
+  Rings:      [Ring (Amber)]
+  Top:        []
+  Main:       []
+Tree:         []
+Travel Roll:  []
+Safe:         []
+Dresser Top:  []

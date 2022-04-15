@@ -1,0 +1,9 @@
+Packing item Beads Necklace (Pearl)
+Box:
+  Rings:      []
+  Top:        []
+  Main:       []
+Tree:         [Beads Necklace (Pearl)]
+Travel Roll:  []
+Safe:         []
+Dresser Top:  []

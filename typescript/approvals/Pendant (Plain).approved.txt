@@ -1,0 +1,9 @@
+Packing item Pendant (Plain)
+Box:
+  Rings:      []
+  Top:        [Pendant (Plain)]
+  Main:       []
+Tree:         []
+Travel Roll:  []
+Safe:         []
+Dresser Top:  []

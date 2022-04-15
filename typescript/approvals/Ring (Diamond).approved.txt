@@ -1,0 +1,9 @@
+Packing item Ring (Diamond)
+Box:
+  Rings:      []
+  Top:        []
+  Main:       []
+Tree:         []
+Travel Roll:  []
+Safe:         [Ring (Diamond)]
+Dresser Top:  []

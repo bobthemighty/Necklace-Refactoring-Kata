@@ -1,0 +1,9 @@
+Packing item Stud Earring (Diamond) (is in travel roll)
+Box:
+  Rings:      []
+  Top:        [Stud Earring (Diamond)]
+  Main:       []
+Tree:         []
+Travel Roll:  []
+Safe:         []
+Dresser Top:  []

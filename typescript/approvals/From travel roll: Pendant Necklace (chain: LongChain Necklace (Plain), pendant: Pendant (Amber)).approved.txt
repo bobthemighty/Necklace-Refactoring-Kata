@@ -1,0 +1,9 @@
+Packing item Pendant Necklace (chain: LongChain Necklace (Plain), pendant: Pendant (Amber)) (is in travel roll)
+Box:
+  Rings:      []
+  Top:        [Pendant (Amber)]
+  Main:       []
+Tree:         [LongChain Necklace (Plain)]
+Travel Roll:  []
+Safe:         []
+Dresser Top:  []

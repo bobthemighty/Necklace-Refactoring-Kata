@@ -1,0 +1,9 @@
+Packing item Hoop Earring (Plain) (is in travel roll)
+Box:
+  Rings:      []
+  Top:        []
+  Main:       []
+Tree:         [Hoop Earring (Plain)]
+Travel Roll:  []
+Safe:         []
+Dresser Top:  []

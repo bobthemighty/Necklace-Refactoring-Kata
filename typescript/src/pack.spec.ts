@@ -1,5 +1,7 @@
 import * as approvals from "approvals";
 
+const approvalDir = `${__dirname}/../approvals`;
+
 import {
   Jewellery,
   JewelleryStorage,
@@ -14,9 +16,9 @@ import { pack } from "./pack";
 
 const printItem = (item: Jewellery): string => {
   if (item.kind === "Necklace" && item.type === "Pendant")
-    return `Pendant Necklace (chain: ${printItem(item.chain)}, pendant: ${
-      item.pendant
-    })`;
+    return `Pendant Necklace (chain: ${printItem(
+      item.chain
+    )}, pendant: ${printItem(item.pendant)})`;
 
   if (item.kind === "Necklace" || item.kind === "Earring")
     return `${item.type} ${item.kind} (${item.stone})`;
@@ -65,9 +67,14 @@ test.each`
   ${makeRing("Diamond")}
   ${makePendant("Plain")}
 `("Print item", ({ item }) => {
-  approvals.verify(__dirname, printItem(item), packItem(item, makeStorage()), {
-    forceApproveAll: process.env["APPROVE"] === "1",
-  });
+  approvals.verify(
+    approvalDir,
+    printItem(item),
+    packItem(item, makeStorage()),
+    {
+      forceApproveAll: process.env["APPROVE"] === "1",
+    }
+  );
 });
 
 test.each`
@@ -90,7 +97,7 @@ test.each`
   const storage = makeStorage();
   storage.travelRoll.push(item);
   approvals.verify(
-    __dirname,
+    approvalDir,
     `From travel roll: ${printItem(item)}`,
     packItem(item, storage),
     {
