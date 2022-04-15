@@ -1,0 +1,8 @@
+Box:
+  Rings:      []
+  Top:        [Pendant (Pearl)]
+  Main:       []
+Tree:         [Beads Necklace (Plain)]
+Travel Roll:  []
+Safe:         []
+Dresser Top:  []

@@ -12,7 +12,7 @@ import {
   makeRing,
   makeStorage,
 } from "./jewellery";
-import { pack } from "./pack";
+import { pack, packNecklace } from "./pack";
 
 const printItem = (item: Jewellery): string => {
   if (item.kind === "Necklace" && item.type === "Pendant")
@@ -51,6 +51,28 @@ const packItem = (item: Jewellery, storage: JewelleryStorage) => {
 
 test.each`
   item
+  ${makeNecklace("Diamond", "Chain")}
+  ${makeNecklace("Plain", "LongChain")}
+  ${makeNecklace("Amber", "Chain")}
+  ${makeNecklace("Pearl", "Beads")}
+  ${makePendantNecklace("Pearl", "Beads")}
+  ${makePendantNecklace("Diamond", "Chain")}
+  ${makePendantNecklace("Diamond", "LongChain")}
+`("Pack Necklace", ({ item }) => {
+  const storage = makeStorage();
+  packNecklace(item, storage);
+  approvals.verify(
+    approvalDir,
+    `Pack necklace ${printItem(item)}`,
+    printStorage(storage),
+    {
+      forceApproveAll: process.env["APPROVE"] === "1",
+    }
+  );
+});
+
+test.each`
+  item
   ${makeEarring("Amber", "Stud")}
   ${makeEarring("Diamond", "Stud")}
   ${makeEarring("Plain", "Hoop")}
@@ -66,10 +88,10 @@ test.each`
   ${makeRing("Amber")}
   ${makeRing("Diamond")}
   ${makePendant("Plain")}
-`("Print item", ({ item }) => {
+`("Pack item", ({ item }) => {
   approvals.verify(
     approvalDir,
-    printItem(item),
+    `Pack ${printItem(item)}`,
     packItem(item, makeStorage()),
     {
       forceApproveAll: process.env["APPROVE"] === "1",
@@ -93,7 +115,7 @@ test.each`
   ${makePendantNecklace("Amber", "LongChain")}
   ${makeRing("Amber")}
   ${makeRing("Diamond")}
-`("Print item", ({ item }) => {
+`("Pack item from travel roll", ({ item }) => {
   const storage = makeStorage();
   storage.travelRoll.push(item);
   approvals.verify(

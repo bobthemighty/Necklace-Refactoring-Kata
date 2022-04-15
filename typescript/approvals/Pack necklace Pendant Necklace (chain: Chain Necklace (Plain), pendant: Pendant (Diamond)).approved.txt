@@ -1,0 +1,8 @@
+Box:
+  Rings:      []
+  Top:        [Pendant Necklace (chain: Chain Necklace (Plain), pendant: Pendant (Diamond))]
+  Main:       []
+Tree:         []
+Travel Roll:  []
+Safe:         []
+Dresser Top:  []
