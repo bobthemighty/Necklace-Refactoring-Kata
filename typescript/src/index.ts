@@ -49,3 +49,18 @@ export function pack(item: Jewellery, storage: JewelleryStorage) {
   if (storage.travelRoll.includes(item))
     storage.travelRoll = storage.travelRoll.filter((x) => x !== item);
 }
+
+export function makeStorage(): JewelleryStorage {
+  return {
+    box: {
+      mainSection: [],
+      topShelf: [],
+      ringCompartment: [],
+    },
+
+    safe: [],
+    tree: [],
+    dresserTop: [],
+    travelRoll: [],
+  };
+}
