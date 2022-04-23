@@ -47,14 +47,14 @@ export const makeNecklace = (stone: Jewel, type: NecklaceType): Necklace => ({
 });
 
 export const makePendantNecklace = (
-  pendant: Pendant,
+  pendant: Jewel,
   chain: NecklaceType
 ): PendantNecklace => ({
   _kind: "Necklace",
   type: "Pendant",
   stone: "Plain",
   chain: makeNecklace("Plain", chain),
-  pendant,
+  pendant: makePendant(pendant),
   size() {
     if (this.chain.size() === "Large" || this.pendant.size() == "Large")
       return "Large";
