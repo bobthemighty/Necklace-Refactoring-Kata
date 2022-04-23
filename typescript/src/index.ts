@@ -63,9 +63,7 @@ const packSmallTravellRollItems = (
 const defaultPacker = (storage: JewelleryStorage): Packer<Jewellery> => ({
   pick: (item): item is Jewellery => true,
   pack: (item) => {
-    if (item.stone === "Diamond") {
-      storage.safe.push(item);
-    } else if (item.size() === "Small") {
+    if (item.size() === "Small") {
       storage.box.topShelf.push(item);
     } else if (item._kind === "Earring" && item.type === "Hoop") {
       storage.tree.push(item);
@@ -88,7 +86,7 @@ const defaultPacker = (storage: JewelleryStorage): Packer<Jewellery> => ({
 });
 
 export function pack(item: Jewellery, storage: JewelleryStorage) {
-  [packSmallTravellRollItems, defaultPacker]
+  [packSmallTravellRollItems, safePacker, defaultPacker]
     .map((p) => p(storage))
     .find((p) => p.pick(item))
     .pack(item);
