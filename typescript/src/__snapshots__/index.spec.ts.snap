@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pack necklace: Amber Chain necklace: Amber Chain necklace 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [
+      Object {
+        "_kind": "Necklace",
+        "size": [Function],
+        "stone": "Amber",
+        "type": "Chain",
+      },
+    ],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [],
+}
+`;
+
+exports[`Pack necklace: Beads necklace with Pearl pendant: Beads necklace with Pearl pendant 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [
+      Object {
+        "_kind": "Pendant",
+        "size": [Function],
+        "stone": "Pearl",
+      },
+    ],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [
+    Object {
+      "_kind": "Necklace",
+      "size": [Function],
+      "stone": "Plain",
+      "type": "Beads",
+    },
+  ],
+}
+`;
+
+exports[`Pack necklace: Chain necklace with Diamond pendant: Chain necklace with Diamond pendant 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [
+      Object {
+        "_kind": "Necklace",
+        "chain": Object {
+          "_kind": "Necklace",
+          "size": [Function],
+          "stone": "Plain",
+          "type": "Chain",
+        },
+        "pendant": Object {
+          "_kind": "Pendant",
+          "size": [Function],
+          "stone": "Diamond",
+        },
+        "size": [Function],
+        "stone": "Plain",
+        "type": "Pendant",
+      },
+    ],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [],
+}
+`;
+
+exports[`Pack necklace: Diamond Chain necklace: Diamond Chain necklace 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [],
+  },
+  "dresserTop": Array [],
+  "safe": Array [
+    Object {
+      "_kind": "Necklace",
+      "size": [Function],
+      "stone": "Diamond",
+      "type": "Chain",
+    },
+  ],
+  "travelRoll": Array [],
+  "tree": Array [],
+}
+`;
+
+exports[`Pack necklace: LongChain necklace with Diamond pendant: LongChain necklace with Diamond pendant 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [
+      Object {
+        "_kind": "Pendant",
+        "size": [Function],
+        "stone": "Diamond",
+      },
+    ],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [
+    Object {
+      "_kind": "Necklace",
+      "size": [Function],
+      "stone": "Plain",
+      "type": "LongChain",
+    },
+  ],
+}
+`;
+
+exports[`Pack necklace: Pearl Beads necklace: Pearl Beads necklace 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [
+    Object {
+      "_kind": "Necklace",
+      "size": [Function],
+      "stone": "Pearl",
+      "type": "Beads",
+    },
+  ],
+}
+`;
+
+exports[`Pack necklace: Plain LongChain necklace: Plain LongChain necklace 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [
+    Object {
+      "_kind": "Necklace",
+      "size": [Function],
+      "stone": "Plain",
+      "type": "LongChain",
+    },
+  ],
+}
+`;
