@@ -265,9 +265,7 @@ Object {
 exports[`From travellroll: Plain Drop earrings: Plain Drop earrings 1`] = `
 Object {
   "box": Object {
-    "mainSection": Array [],
-    "ringCompartment": Array [],
-    "topShelf": Array [
+    "mainSection": Array [
       Object {
         "_kind": "Earring",
         "size": [Function],
@@ -275,6 +273,8 @@ Object {
         "type": "Drop",
       },
     ],
+    "ringCompartment": Array [],
+    "topShelf": Array [],
   },
   "dresserTop": Array [],
   "safe": Array [],
@@ -548,9 +548,7 @@ Object {
 exports[`Pack item: Plain Drop earrings: Plain Drop earrings 1`] = `
 Object {
   "box": Object {
-    "mainSection": Array [],
-    "ringCompartment": Array [],
-    "topShelf": Array [
+    "mainSection": Array [
       Object {
         "_kind": "Earring",
         "size": [Function],
@@ -558,6 +556,8 @@ Object {
         "type": "Drop",
       },
     ],
+    "ringCompartment": Array [],
+    "topShelf": Array [],
   },
   "dresserTop": Array [],
   "safe": Array [],

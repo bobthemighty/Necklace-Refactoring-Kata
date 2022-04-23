@@ -78,7 +78,7 @@ for (const item of packItemCases) {
 for (const item of packNecklaceCases) {
   test(`Pack necklace: ${nameOf(item)}`, () => {
     const storage = makeStorage();
-    packNecklace(item, storage);
+    pack(item, storage);
     expect(storage).toMatchSnapshot(nameOf(item));
   });
 }

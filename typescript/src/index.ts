@@ -1,4 +1,5 @@
 import {
+  Earring,
   Jewellery,
   JewelleryStorage,
   Necklace,
@@ -60,33 +61,33 @@ const packSmallTravellRollItems = (
   pack: (item) => storage.box.topShelf.push(item),
 });
 
+const earringPacker = (storage: JewelleryStorage): Packer<Earring> => ({
+  pick: (item: Jewellery): item is Earring => item._kind === "Earring",
+  pack: (item: Earring) => {
+    if (item.type === "Hoop") storage.tree.push(item);
+    else if (item.type === "Drop" && item.stone === "Plain")
+      storage.box.mainSection.push(item);
+    else if (item.type === "Drop") storage.box.topShelf.push(item);
+  },
+});
+
 const defaultPacker = (storage: JewelleryStorage): Packer<Jewellery> => ({
   pick: (item): item is Jewellery => true,
   pack: (item) => {
-    if (item.size() === "Small") {
-      storage.box.topShelf.push(item);
-    } else if (item._kind === "Earring" && item.type === "Hoop") {
-      storage.tree.push(item);
-    } else if (
-      item._kind === "Earring" &&
-      (item.type === "Drop" || item.stone !== "Plain")
-    ) {
-      storage.box.topShelf.push(item);
-    } else if (item._kind === "Earring" && item.type === "Drop") {
-      storage.box.mainSection.push(item);
-    } else if (item._kind === "Necklace" && item.type === "Pendant") {
-      storage.tree.push(item.chain);
-      storage.box.topShelf.push(item.pendant);
-    } else if (item._kind === "Necklace") {
-      storage.tree.push(item);
-    } else {
-      storage.dresserTop.push(item);
-    }
+    storage.dresserTop.push(item);
   },
 });
 
 export function pack(item: Jewellery, storage: JewelleryStorage) {
-  [packSmallTravellRollItems, safePacker, defaultPacker]
+  [
+    packSmallTravellRollItems,
+    safePacker,
+    smallItemPacker,
+    earringPacker,
+    pendantNecklacePacker,
+    defaultNecklacePacker,
+    defaultPacker,
+  ]
     .map((p) => p(storage))
     .find((p) => p.pick(item))
     .pack(item);
