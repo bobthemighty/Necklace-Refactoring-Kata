@@ -5,20 +5,36 @@ import {
   PendantNecklace,
 } from "./jewellery";
 
-export function packNecklace(
-  item: Necklace | PendantNecklace,
-  storage: JewelleryStorage
-) {
+const safePacker = (storage: JewelleryStorage) => (item: Jewellery) => {
   if (item.stone === "Diamond") {
     storage.safe.push(item);
-  } else if (item.size() !== "Large") {
+    return true;
+  }
+};
+
+const smallItemPacker = (storage: JewelleryStorage) => (item: Jewellery) => {
+  if (item.size() === "Small") {
     storage.box.topShelf.push(item);
-  } else if (item.type === "Pendant") {
+    return true;
+  }
+};
+
+const defaultPacker = (storage: JewelleryStorage) => (item: Jewellery) => {
+  if (item.type === "Pendant") {
     storage.tree.push(item.chain);
     storage.box.topShelf.push(item.pendant);
   } else {
     storage.tree.push(item);
   }
+};
+
+export function packNecklace(
+  item: Necklace | PendantNecklace,
+  storage: JewelleryStorage
+) {
+  [safePacker(storage), smallItemPacker(storage), defaultPacker(storage)].find(
+    (pack) => pack(item)
+  );
 }
 
 export function pack(item: Jewellery, storage: JewelleryStorage) {
