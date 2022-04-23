@@ -52,30 +52,46 @@ export function packNecklace(
     .pack(item);
 }
 
+const packSmallTravellRollItems = (
+  storage: JewelleryStorage
+): Packer<Jewellery> => ({
+  pick: (item): item is Jewellery =>
+    storage.travelRoll.includes(item) && item.size() === "Small",
+  pack: (item) => storage.box.topShelf.push(item),
+});
+
+const defaultPacker = (storage: JewelleryStorage): Packer<Jewellery> => ({
+  pick: (item): item is Jewellery => true,
+  pack: (item) => {
+    if (item.stone === "Diamond") {
+      storage.safe.push(item);
+    } else if (item.size() === "Small") {
+      storage.box.topShelf.push(item);
+    } else if (item._kind === "Earring" && item.type === "Hoop") {
+      storage.tree.push(item);
+    } else if (
+      item._kind === "Earring" &&
+      (item.type === "Drop" || item.stone !== "Plain")
+    ) {
+      storage.box.topShelf.push(item);
+    } else if (item._kind === "Earring" && item.type === "Drop") {
+      storage.box.mainSection.push(item);
+    } else if (item._kind === "Necklace" && item.type === "Pendant") {
+      storage.tree.push(item.chain);
+      storage.box.topShelf.push(item.pendant);
+    } else if (item._kind === "Necklace") {
+      storage.tree.push(item);
+    } else {
+      storage.dresserTop.push(item);
+    }
+  },
+});
+
 export function pack(item: Jewellery, storage: JewelleryStorage) {
-  if (storage.travelRoll.includes(item) && item.size() !== "Large")
-    storage.box.topShelf.push(item);
-  else if (item.stone === "Diamond") {
-    storage.safe.push(item);
-  } else if (item.size() === "Small") {
-    storage.box.topShelf.push(item);
-  } else if (item._kind === "Earring" && item.type === "Hoop") {
-    storage.tree.push(item);
-  } else if (
-    item._kind === "Earring" &&
-    (item.type === "Drop" || item.stone !== "Plain")
-  ) {
-    storage.box.topShelf.push(item);
-  } else if (item._kind === "Earring" && item.type === "Drop") {
-    storage.box.mainSection.push(item);
-  } else if (item._kind === "Necklace" && item.type === "Pendant") {
-    storage.tree.push(item.chain);
-    storage.box.topShelf.push(item.pendant);
-  } else if (item._kind === "Necklace") {
-    storage.tree.push(item);
-  } else {
-    storage.dresserTop.push(item);
-  }
+  [packSmallTravellRollItems, defaultPacker]
+    .map((p) => p(storage))
+    .find((p) => p.pick(item))
+    .pack(item);
 
   if (storage.travelRoll.includes(item))
     storage.travelRoll = storage.travelRoll.filter((x) => x !== item);

@@ -1,5 +1,309 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`From travellroll: Amber Beads necklace: Amber Beads necklace 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [
+    Object {
+      "_kind": "Necklace",
+      "size": [Function],
+      "stone": "Amber",
+      "type": "Beads",
+    },
+  ],
+}
+`;
+
+exports[`From travellroll: Amber Chain necklace: Amber Chain necklace 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [
+      Object {
+        "_kind": "Necklace",
+        "size": [Function],
+        "stone": "Amber",
+        "type": "Chain",
+      },
+    ],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [],
+}
+`;
+
+exports[`From travellroll: Amber Stud earrings: Amber Stud earrings 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [
+      Object {
+        "_kind": "Earring",
+        "size": [Function],
+        "stone": "Amber",
+        "type": "Stud",
+      },
+    ],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [],
+}
+`;
+
+exports[`From travellroll: Amber ring: Amber ring 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [
+      Object {
+        "_kind": "Ring",
+        "size": [Function],
+        "stone": "Amber",
+      },
+    ],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [],
+}
+`;
+
+exports[`From travellroll: Beads necklace with Pearl pendant: Beads necklace with Pearl pendant 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [
+      Object {
+        "_kind": "Pendant",
+        "size": [Function],
+        "stone": "Pearl",
+      },
+    ],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [
+    Object {
+      "_kind": "Necklace",
+      "size": [Function],
+      "stone": "Plain",
+      "type": "Beads",
+    },
+  ],
+}
+`;
+
+exports[`From travellroll: Diamond Chain necklace: Diamond Chain necklace 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [],
+  },
+  "dresserTop": Array [],
+  "safe": Array [
+    Object {
+      "_kind": "Necklace",
+      "size": [Function],
+      "stone": "Diamond",
+      "type": "Chain",
+    },
+  ],
+  "travelRoll": Array [],
+  "tree": Array [],
+}
+`;
+
+exports[`From travellroll: Diamond Stud earrings: Diamond Stud earrings 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [],
+  },
+  "dresserTop": Array [],
+  "safe": Array [
+    Object {
+      "_kind": "Earring",
+      "size": [Function],
+      "stone": "Diamond",
+      "type": "Stud",
+    },
+  ],
+  "travelRoll": Array [],
+  "tree": Array [],
+}
+`;
+
+exports[`From travellroll: Diamond ring: Diamond ring 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [],
+  },
+  "dresserTop": Array [],
+  "safe": Array [
+    Object {
+      "_kind": "Ring",
+      "size": [Function],
+      "stone": "Diamond",
+    },
+  ],
+  "travelRoll": Array [],
+  "tree": Array [],
+}
+`;
+
+exports[`From travellroll: LongChain necklace with Amber pendant: LongChain necklace with Amber pendant 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [
+      Object {
+        "_kind": "Pendant",
+        "size": [Function],
+        "stone": "Amber",
+      },
+    ],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [
+    Object {
+      "_kind": "Necklace",
+      "size": [Function],
+      "stone": "Plain",
+      "type": "LongChain",
+    },
+  ],
+}
+`;
+
+exports[`From travellroll: Pearl Beads necklace: Pearl Beads necklace 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [
+    Object {
+      "_kind": "Necklace",
+      "size": [Function],
+      "stone": "Pearl",
+      "type": "Beads",
+    },
+  ],
+}
+`;
+
+exports[`From travellroll: Pearl Drop earrings: Pearl Drop earrings 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [
+      Object {
+        "_kind": "Earring",
+        "size": [Function],
+        "stone": "Pearl",
+        "type": "Drop",
+      },
+    ],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [],
+}
+`;
+
+exports[`From travellroll: Plain Chain necklace: Plain Chain necklace 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [
+      Object {
+        "_kind": "Necklace",
+        "size": [Function],
+        "stone": "Plain",
+        "type": "Chain",
+      },
+    ],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [],
+}
+`;
+
+exports[`From travellroll: Plain Drop earrings: Plain Drop earrings 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [
+      Object {
+        "_kind": "Earring",
+        "size": [Function],
+        "stone": "Plain",
+        "type": "Drop",
+      },
+    ],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [],
+}
+`;
+
+exports[`From travellroll: Plain Hoop earrings: Plain Hoop earrings 1`] = `
+Object {
+  "box": Object {
+    "mainSection": Array [],
+    "ringCompartment": Array [],
+    "topShelf": Array [],
+  },
+  "dresserTop": Array [],
+  "safe": Array [],
+  "travelRoll": Array [],
+  "tree": Array [
+    Object {
+      "_kind": "Earring",
+      "size": [Function],
+      "stone": "Plain",
+      "type": "Hoop",
+    },
+  ],
+}
+`;
+
 exports[`Pack item: Amber Beads necklace: Amber Beads necklace 1`] = `
 Object {
   "box": Object {

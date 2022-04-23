@@ -33,14 +33,6 @@ const packNecklaceCases = [
   makePendantNecklace("Diamond", "LongChain"),
 ];
 
-for (const item of packNecklaceCases) {
-  test(`Pack necklace: ${nameOf(item)}`, () => {
-    const storage = makeStorage();
-    packNecklace(item, storage);
-    expect(storage).toMatchSnapshot(nameOf(item));
-  });
-}
-
 const packItemCases: Array<Jewellery> = [
   makeEarring("Amber", "Stud"),
   makeEarring("Diamond", "Stud"),
@@ -58,8 +50,41 @@ const packItemCases: Array<Jewellery> = [
   makePendant("Plain"),
 ];
 
+const travelRollCases: Array<Jewellery> = [
+  makeEarring("Amber", "Stud"),
+  makeEarring("Diamond", "Stud"),
+  makeEarring("Plain", "Hoop"),
+  makeEarring("Plain", "Drop"),
+  makeEarring("Pearl", "Drop"),
+  makeNecklace("Amber", "Beads"),
+  makeNecklace("Plain", "Chain"),
+  makeNecklace("Amber", "Chain"),
+  makeNecklace("Diamond", "Chain"),
+  makeNecklace("Pearl", "Beads"),
+  makePendantNecklace("Pearl", "Beads"),
+  makePendantNecklace("Amber", "LongChain"),
+  makeRing("Amber"),
+  makeRing("Diamond"),
+];
+
 for (const item of packItemCases) {
   test(`Pack item: ${nameOf(item)}`, () => {
+    const storage = makeStorage();
+    pack(item, storage);
+    expect(storage).toMatchSnapshot(nameOf(item));
+  });
+}
+
+for (const item of packNecklaceCases) {
+  test(`Pack necklace: ${nameOf(item)}`, () => {
+    const storage = makeStorage();
+    packNecklace(item, storage);
+    expect(storage).toMatchSnapshot(nameOf(item));
+  });
+}
+
+for (const item of travelRollCases) {
+  test(`From travellroll: ${nameOf(item)}`, () => {
     const storage = makeStorage();
     pack(item, storage);
     expect(storage).toMatchSnapshot(nameOf(item));
@@ -69,20 +94,6 @@ for (const item of packItemCases) {
 /*
 test.each`
   item
-  ${makeEarring("Amber", "Stud")}
-  ${makeEarring("Diamond", "Stud")}
-  ${makeEarring("Plain", "Hoop")}
-  ${makeEarring("Plain", "Drop")}
-  ${makeEarring("Pearl", "Drop")}
-  ${makeNecklace("Amber", "Beads")}
-  ${makeNecklace("Plain", "Chain")}
-  ${makeNecklace("Amber", "Chain")}
-  ${makeNecklace("Diamond", "Chain")}
-  ${makeNecklace("Pearl", "Beads")}
-  ${makePendantNecklace("Pearl", "Beads")}
-  ${makePendantNecklace("Amber", "LongChain")}
-  ${makeRing("Amber")}
-  ${makeRing("Diamond")}
 `("Pack item from travel roll", ({ item }) => {
   const storage = makeStorage();
   storage.travelRoll.push(item);
