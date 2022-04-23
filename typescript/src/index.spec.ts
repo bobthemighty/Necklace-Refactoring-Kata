@@ -1,5 +1,12 @@
-import { makeStorage, packNecklace } from ".";
-import { Jewellery, makeNecklace, makePendantNecklace } from "./jewellery";
+import { makeStorage, pack, packNecklace } from ".";
+import {
+  Jewellery,
+  makeEarring,
+  makeNecklace,
+  makePendant,
+  makePendantNecklace,
+  makeRing,
+} from "./jewellery";
 
 const nameOf = (item: Jewellery) => {
   switch (item._kind) {
@@ -13,6 +20,7 @@ const nameOf = (item: Jewellery) => {
       }
       return `${item.stone} ${item.type} necklace`;
   }
+  return `${item.stone} ${item._kind}`;
 };
 
 const packNecklaceCases = [
@@ -32,3 +40,60 @@ for (const item of packNecklaceCases) {
     expect(storage).toMatchSnapshot(nameOf(item));
   });
 }
+
+const packItemCases: Array<Jewellery> = [
+  makeEarring("Amber", "Stud"),
+  makeEarring("Diamond", "Stud"),
+  makeEarring("Plain", "Hoop"),
+  makeEarring("Plain", "Drop"),
+  makeNecklace("Amber", "Beads"),
+  makeNecklace("Plain", "Chain"),
+  makeNecklace("Amber", "Chain"),
+  makeNecklace("Diamond", "Chain"),
+  makeNecklace("Pearl", "Beads"),
+  makePendantNecklace("Pearl", "Beads"),
+  makePendantNecklace("Amber", "LongChain"),
+  makeRing("Amber"),
+  makeRing("Diamond"),
+  makePendant("Plain"),
+];
+
+for (const item of packItemCases) {
+  test(`Pack item: ${nameOf(item)}`, () => {
+    const storage = makeStorage();
+    pack(item, storage);
+    expect(storage).toMatchSnapshot(nameOf(item));
+  });
+}
+
+/*
+test.each`
+  item
+  ${makeEarring("Amber", "Stud")}
+  ${makeEarring("Diamond", "Stud")}
+  ${makeEarring("Plain", "Hoop")}
+  ${makeEarring("Plain", "Drop")}
+  ${makeEarring("Pearl", "Drop")}
+  ${makeNecklace("Amber", "Beads")}
+  ${makeNecklace("Plain", "Chain")}
+  ${makeNecklace("Amber", "Chain")}
+  ${makeNecklace("Diamond", "Chain")}
+  ${makeNecklace("Pearl", "Beads")}
+  ${makePendantNecklace("Pearl", "Beads")}
+  ${makePendantNecklace("Amber", "LongChain")}
+  ${makeRing("Amber")}
+  ${makeRing("Diamond")}
+`("Pack item from travel roll", ({ item }) => {
+  const storage = makeStorage();
+  storage.travelRoll.push(item);
+  pack(item, storage),
+    approvals.verifyAsJSON(
+      approvalDir,
+      `From travel roll: ${printItem(item)}`,
+      unwrap(storage),
+      {
+        forceApproveAll: process.env["APPROVE"] === "1",
+      }
+    );
+});
+*/

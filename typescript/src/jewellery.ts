@@ -68,7 +68,7 @@ export const makePendant = (stone: Jewel): Pendant => ({
   size: () => "Small",
 });
 
-export const makeRing = (stone: Jewel) => ({
+export const makeRing = (stone: Jewel): Ring => ({
   _kind: "Ring",
   size: () => "Small",
   stone,
